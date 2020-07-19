@@ -59,6 +59,13 @@
       "name": "Under Armour",
       "type": "Sportswear",
       "price": 21.07
+    },
+    {
+      "id": 11,
+      "ticker": "IBKR",
+      "name": "Interactive Brokers",
+      "type": "Finance",
+      "price": 50
     }
   ]
 }

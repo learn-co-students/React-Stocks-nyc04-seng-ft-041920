@@ -6,14 +6,23 @@ h2{
   text-align: center;
 }
 
+.container {
+  /* border: 1px solid red; */
+  /* height: 80vh; */
+  width: 80vw;
+  overflow: scroll;
+}
+
 .card{
-  width: 50%;
+  width: 30%;
   margin: 0 auto;
   text-align: center;
+  /* border: 1px solid red; */
 }
 
 .list-group{
   width: 50%;
   margin: 0 auto;
   text-align: center;
+  /* border: 1px solid red; */
 }

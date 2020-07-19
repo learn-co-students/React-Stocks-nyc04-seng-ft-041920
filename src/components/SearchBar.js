@@ -1,33 +1,57 @@
-import React from 'react';
+import React from "react";
 
-const SearchBar = () => {
-  return (
-    <div>
+class SearchBar extends React.Component {
+  state = {
+    alphabetically: false,
+    price: false,
+  };
+  onChangeHandler = (event) => {
+    event.persist();
+    this.setState((prevState) => {
+      return {
+        [event.target.value]: !prevState[event.target.value],
+      };
+    });
+  };
 
-      <strong>Sort by:</strong>
-      <label>
-        <input type="radio" value="Alphabetically" checked={null} onChange={null}/>
-        Alphabetically
-      </label>
-      <label>
-        <input type="radio" value="Price" checked={null} onChange={null}/>
-        Price
-      </label>
-      <br/>
+  componentDidUpdate() {
+    this.props.sortBy(this.state);
+  }
 
-      <label>
-        <strong>Filter:</strong>
-        <select onChange={null}>
-          <option value="Tech">Tech</option>
-          <option value="Sportswear">Sportswear</option>
-          <option value="Finance">Finance</option>
-        </select>
-      </label>
+  render() {
+    return (
+      <div>
+        <strong>Sort by:</strong>
+        <label>
+          <input
+            type="radio"
+            value="alphabetically"
+            checked={this.state.alphabetically}
+            onClick={this.onChangeHandler}
+          />
+          Alphabetically
+        </label>
+        <label>
+          <input
+            type="radio"
+            value="price"
+            checked={this.state.price}
+            onClick={this.onChangeHandler}
+          />
+          Price
+        </label>
+        <br />
 
-
-    </div>
-  );
+        <label>
+          <strong>Filter:</strong>
+          <select onChange={null}>
+            <option value="Tech">Tech</option>
+            <option value="Sportswear">Sportswear</option>
+            <option value="Finance">Finance</option>
+          </select>
+        </label>
+      </div>
+    );
+  }
 }
-
-
 export default SearchBar;

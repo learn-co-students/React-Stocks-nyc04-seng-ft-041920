@@ -5,6 +5,7 @@ class SearchBar extends React.Component {
     alphabetically: false,
     price: false,
   };
+
   onChangeHandler = (event) => {
     event.persist();
     this.setState((prevState) => {

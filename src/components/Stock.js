@@ -1,16 +1,11 @@
 import React from "react";
 
 class Stock extends React.Component {
-  // state = {
-  //   isBought: false,
-  // };
-
   clickHandler() {
     this.props.handleStockClick(this.props.stock);
     // this.setState((prevState) => ({
     //   isBought: !prevState.isBought,
     // }));
-    // console.log(this.state.isBought);
   }
 
   render() {
